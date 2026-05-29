@@ -1,0 +1,19 @@
+What I learned
+
+1.RTL Design Hierarchy & Modularity: I learned how to design complex, math-heavy architectures by breaking them down into clean, reusable structural hardware blocks (like custom Barrel Shifters, multiplexers, and normalizers) combined under a centralized Finite State Machine.
+
+2.FPGA: I learned direct hardware configuration. Instead of writing code that executes line-by-line sequentially on CPU, I wrote synthesizable code that configures parallel logic circuits operating deterministically with the system clock.
+
+3.Clock Domain Management: Working with a 40MHz Oscillator required implementing custom clock dividers. I learned the difficulty of connecting different peripheral components (keypad and display debouncers) without causing clock skew or setup/hold violation.
+
+4.Timing Constraints & Propagation Delay: I gained insight into how data ripples through logic gates, dealing with physical real-world traits like gate delays, slew rates and setting setup/hold margins to keep my calculations stable before the next clock edge.
+
+5.Hardware Debbuging difficulty: Without a software debugger, i had to architect my own real-time hardware visibility by routing internal data paths, FSM states, and error conditions directly to physical onboard LEDs to diagnose any issues visually.
+
+6.Advanced Hardware Architectures: I explored high-performance data path concepts such as Carry-Save Adders(CSA), EBAM, and pipelining structures, analyzing the fundamental engineering trade-offs between maximizing clock throughput vs minimizing propagation latency.
+
+7.Mastering the Concept of 'State'(Registers): I learned that while combinational logic is "memoryless", registers are the backbone of hardware memory. By using D flipflops grouped as registers, i learned how to capture data on a clock edge and hold it steady so that other components have a stable value to read from.
+
+8.Implementing Feedback Loops: I learned sequential feedback systems. In a microcontroller, I can easily read an old variable value from RAM; in FPGA, I have to physically route the output of a register back into the combinational input logic. I learned how to use previous output state to compute the next hardware behavior- a concept essential for building stable FSMs and digital filters.
+
+9.Handling Clock-Edge Synchronization: I learned how to safely bring external, unpredictable user inputs(like pressing a key on the keypad) into a synchronous clock domain. this taught me importance of registers to eliminate metastability issue before letting data enter to the arithmetic module.
