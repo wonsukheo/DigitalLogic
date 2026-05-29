@@ -23,6 +23,9 @@ The design is modularized into dedicated RTL blocks to optimize data path propag
 * **`clock_div`**: Divides the high-frequency onboard clock down to stable operational frequencies required for debouncing and sequential logic.
 
 ## Hardware Demonstration
+
+Click below to watch the full project demonstration (Google Drive Link): https://drive.google.com/file/d/1Ner-ok_hpGiTdJ8SQWl8-W1FJ9TPzsxc/view?usp=sharing
+
 A list of verified test vectors running on physical hardware:
 | Operand A (Hex) | Operand B (Hex) | Op | Expected Result (Hex) | Dec equivalent | Status |
 |---|---|---|---|---|---|
